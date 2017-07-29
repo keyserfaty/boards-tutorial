@@ -1,6 +1,7 @@
 import { Node } from './helpers/Node'
 
 import Board from './components/Board'
+import BoardEmpty from './components/BoardEmpty'
 
 const items = [
   { completed: false, hover: false, text: 'Buy milk' },
@@ -12,15 +13,19 @@ const items2 = [
   { completed: false, hover: false, text: 'Charge my computer' }
 ]
 
+const boardsList = [
+  { title: 'TODO', list: items },
+  { title: 'DONE', list: items2, isCreating: true }
+]
+
 const content = (
   Node('section', { id: 'container' },
     Node('div', { class: 'title' },
       Node('h1', {}, 'My board')
     ),
     Node('div', { class: 'content' },
-      Board({ title: 'TODO', list: items }),
-      Board({ title: 'DONE', list: items2 }),
-      Board({}),
+      ...boardsList.map(board => Board({ ...board })),
+      BoardEmpty(),
     )
   )
 )
