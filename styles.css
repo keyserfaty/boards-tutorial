@@ -73,6 +73,23 @@ body {
     padding: 11px 36px;
     border-top: 1px solid #EFEFEF;
     color: #7E7E7E;
+    position: relative;
+}
+
+#container .content .board .list li.item .checkbox,
+#container .content .board .list li.item .trash {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#container .content .board .list li.item .checkbox {
+    left: 10px;
+}
+
+#container .content .board .list li.item .trash {
+    right: 18px;
 }
 
 #container .content .board .list li.item.new {
