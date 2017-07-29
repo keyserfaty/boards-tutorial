@@ -24,7 +24,7 @@ const content = (
       Node('h1', {}, 'My board')
     ),
     Node('div', { class: 'content' },
-      ...boardsList.map(board => Board({ ...board })),
+      ...boardsList.map((board, i) => Board({ ...board, key: i })),
       BoardEmpty(),
     )
   )
