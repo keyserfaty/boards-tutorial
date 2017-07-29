@@ -1,5 +1,7 @@
 import { Node } from './helpers/Node'
 
+import BoardItem from './components/BoardItem'
+
 const content = (
   Node('section', { id: 'container' },
     Node('div', { class: 'title' },
@@ -10,21 +12,9 @@ const content = (
         Node('div', { class: 'title' }, 'TODO'),
         Node('div', { class: 'list' },
           Node('ul', {},
-            Node('li', { class: 'item' }, 'My todo item'),
-            Node('li', { class: 'item' },
-              Node('span', { class: 'checkbox' },
-                Node('input', { type: 'checkbox' })
-              ),
-              'My todo text',
-              Node('span', { class: 'trash' }, '🗑')
-            ),
-            Node('li', { class: 'item completed' },
-              Node('span', { class: 'checkbox' },
-                Node('input', { type: 'checkbox' })
-              ),
-              'My todo text',
-              Node('span', { class: 'trash' }, '🗑')
-            ),
+            BoardItem({ completed: false, hover: false, text: 'Buy milk' }),
+            BoardItem({ completed: false, hover: true, text: 'Sing a song' }),
+            BoardItem({ completed: true, hover: true, text: 'Write a poem' }),
           ),
           Node('div', { class: 'item new' }, '+ New item')
         )
@@ -33,7 +23,7 @@ const content = (
         Node('div', { class: 'title' }, 'TODO'),
         Node('div', { class: 'list' },
           Node('ul', {},
-            Node('li', { class: 'item' }, 'My todo item'),
+            BoardItem({ completed: false, hover: false, text: 'Charge my computer' }),
           ),
           Node('div', { class: 'item new' },
             Node('div', { class: 'update' },
