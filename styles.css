@@ -55,9 +55,7 @@ body {
 }
 
 #container .content .board .title {
-    padding-left: 36px;
-    padding-top: 29px;
-    padding-bottom: 22px;
+    padding: 29px 36px 22px;
     color: #7E7E7E;
     font-style: italic;
 }
@@ -88,4 +86,28 @@ body {
 
 #container .content .board .list li.item.new:hover {
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.21);
+}
+
+.update {
+    width: 100%;
+    max-width: 300px;
+}
+
+.update input {
+    width: 90%;
+    background: none;
+    border: 0;
+    color: #7E7E7E;
+    font-size: 16px;
+}
+
+.update input:focus {
+    outline: none;
+}
+
+.update button {
+    background: none;
+    border: 0;
+    padding: 0;
+    font-size: 18px;
 }
