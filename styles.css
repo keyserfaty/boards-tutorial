@@ -34,7 +34,7 @@ body {
     position: relative;
     width: 289px;
     min-width: 289px;
-    min-height: 376px;
+    min-height: 358px;
     border-radius: 30px;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
     margin-left: 38px;
@@ -52,6 +52,7 @@ body {
     cursor: pointer;
     background: rgba(248, 248, 248, 0.1);
     position: relative;
+    max-height: 358px;
 }
 
 #container .content .board .title {
@@ -69,7 +70,7 @@ body {
     font-size: 36px;
 }
 
-#container .content .board .list li.item {
+#container .content .board .list li.item, .item.new {
     padding: 11px 36px;
     border-top: 1px solid #EFEFEF;
     color: #7E7E7E;
@@ -92,16 +93,17 @@ body {
     right: 18px;
 }
 
-#container .content .board .list li.item.new {
+#container .content .board .list li.item.completed {
+    text-decoration: line-through;
+}
+
+#container .content .board .item.new {
     cursor: pointer;
-    position: absolute;
     bottom: 0;
-    width: 100%;
     padding-bottom: 18px;
 }
 
-
-#container .content .board .list li.item.new:hover {
+#container .content .board .item.new:hover {
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.21);
 }
 
