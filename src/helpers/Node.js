@@ -24,12 +24,10 @@ export const Node = (elem, attrs, ...children) => {
   if (children.length > 0) {
     children.forEach(child => {
       if (typeof child === 'string') {
-      node.innerHTML = child
-    }
+        child = d.createTextNode(child)
+      }
 
-    if (typeof child === 'object') {
       node.appendChild(child)
-    }
   })
   }
 
